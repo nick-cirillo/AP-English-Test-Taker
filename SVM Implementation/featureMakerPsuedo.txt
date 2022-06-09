@@ -1,0 +1,17 @@
+Open file
+Set up line-by-line iteration
+For each line, add the line to totaltext
+   If the line contains | (end marker)
+       If i = 0 (this is the passage)
+           Featurize and add to cell array on levels j:j+4
+       Else if i = 1 (this is the question)
+           Featurize and append to cell array on levels j:j+4
+       Else if i > 1 && i < 7 (these are the answers)
+           Featurize and add to cell array at level j + i
+           if i = 6 (this is answer E)
+	j+=5
+       Endif
+   i++
+   totaltext = ''
+
+       
